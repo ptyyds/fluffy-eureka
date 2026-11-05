@@ -27,7 +27,7 @@ pnpm pack
 pnpm dist
 ```
 
-安装包写入 package.json 中 build.directories.output 指定的目录。0.3.0 源码包不附带已验证的正式安装包；此前安装版为 0.2.0。
+Windows x64 安装包已发布：[下载 0.3.0 开发预览](https://github.com/ptyyds/fluffy-eureka/releases/tag/v0.3.0-preview)。包含赞赏支持和交流群页面，仍保留网页连接等已知问题。开发打包输出位置由 package.json 的 build.directories.output 指定。
 
 ## 使用
 
