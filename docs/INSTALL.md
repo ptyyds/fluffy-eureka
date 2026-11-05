@@ -6,7 +6,7 @@
 
 进入仓库 Releases，选择实际已发布的 Windows x64 安装包 `WhaleDesk-版本号-Setup.exe`。不要把 GitHub 自动生成的 Source code ZIP 当成安装程序。
 
-目前仓库主要提供开发预览源码，本文不表示已经发布 0.3.0 安装包。未看到安装包时，请使用下方源码运行方式。
+已发布 [0.3.0 Windows x64 开发预览安装包](https://github.com/ptyyds/fluffy-eureka/releases/tag/v0.3.0-preview)，附 SHA-256 校验值。此版本包含赞赏与交流群页面；网页连接问题仍未修复。需要自行开发时，可使用下方源码运行方式。
 
 运行安装包并按向导选择位置。更新前保存任务、退出旧窗口。安装包目前未签名；请先核对仓库来源和发布说明，不要关闭系统安全防护。
 
