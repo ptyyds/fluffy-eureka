@@ -21,7 +21,7 @@ jobs:
       - run: pnpm install --frozen-lockfile --ignore-scripts
       - run: node node_modules/electron/install.js
       - run: pnpm test
-      - run: pnpm dist
+      - run: pnpm dist --publish never
       - name: Publish preview installer
         shell: pwsh
         env:
