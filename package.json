@@ -1,0 +1,52 @@
+{
+  "name": "whaledesk",
+  "productName": "WhaleDesk",
+  "version": "0.3.0",
+  "description": "鲸台：把网页 AI 变成本地行动伙伴",
+  "author": "WhaleDesk contributors",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.cjs",
+    "pack": "electron-builder --win dir",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "45.2.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.whaledesk.app",
+    "productName": "WhaleDesk",
+    "directories": {
+      "output": "release-0.3.0"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json",
+      "LICENSE",
+      "README.md"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/whaledesk.ico",
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "鲸台 WhaleDesk",
+      "artifactName": "WhaleDesk-${version}-Setup.${ext}"
+    }
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "1.1.0",
+    "exceljs": "4.4.0",
+    "mammoth": "1.13.0",
+    "pdfjs-dist": "6.5.438"
+  },
+  "private": true
+}

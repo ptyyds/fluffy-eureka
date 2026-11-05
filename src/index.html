@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>鲸台 WhaleDesk</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<link rel="stylesheet" href="file-context.css">
+<svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-whale" viewBox="0 0 64 64"><path d="M9 29c0-11 9-18 22-18 14 0 23 9 23 23v5c4 0 6-4 7-7 2 11-4 19-13 19H29C16 51 7 43 9 29Z"/><path d="M10 34h23M18 34v10m8-10v13m28-8c-3 4-8 6-14 6M26 10l-3-5m9 5 3-6"/><circle cx="42" cy="25" r="1.7" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-4v6l4 2"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9H3Z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="m8 5-5 5 5 5m-5-5h11a6 6 0 0 1 0 12"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M5 3h9l5 5v13H5Zm9 0v6h5M9 13h6m-6 4h6"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 9a8 8 0 0 0-14-4L3 8m0-5v5h5M4 15a8 8 0 0 0 14 4l3-3m0 5v-5h-5"/></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/></symbol>
+<symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 6 6 6-6 6m9 0h7"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+  <div class="brand"><svg class="whale-logo"><use href="#i-whale"/></svg><div><strong>鲸台</strong><small>WhaleDesk</small></div></div>
+  <button class="new-task primary" id="newTask"><svg><use href="#i-plus"/></svg>新建任务</button>
+  <nav aria-label="主导航">
+    <button data-nav="desk" class="nav active"><svg><use href="#i-grid"/></svg>行动工作台</button>
+    <button data-nav="recipes" class="nav"><svg><use href="#i-spark"/></svg>我的技能</button>
+    <button data-nav="history" class="nav"><svg><use href="#i-history"/></svg>行动足迹</button>
+    <button data-nav="settings" class="nav"><svg><use href="#i-settings"/></svg>连接与设置</button>
+  </nav>
+  <div class="sidebar-note"><span class="note-dot"></span><strong>你的电脑，你做主</strong><p>每一次行动，<br>都从你的确认开始。</p></div>
+  <div class="sidebar-bottom"><svg><use href="#i-shield"/></svg><span>本地执行 · 网页推理</span><small>预览版 0.3 · 直聊试验</small></div>
+</aside>
+<div class="app">
+  <header class="topbar"><div><span class="breadcrumb">鲸台 /</span> <strong id="pageTitle">行动工作台</strong></div><div class="top-actions"><span class="pill"><span class="dot"></span>本地助手已就绪</span><button class="quiet" id="stop"><svg><use href="#i-stop"/></svg>停止行动</button></div></header>
+  <div class="workspace-layout">
+    <main id="main" tabindex="-1">
+      <section id="deskPage">
+        <div class="greeting"><span class="small-label">让 AI 走出聊天框</span><h1>把想法，交给行动。</h1><p>你说想做什么，鲸台陪你一步步完成。</p><svg class="hero-whale" aria-hidden="true"><use href="#i-whale"/></svg></div>
+        <div class="route" aria-label="任务进度"><div class="route-step current" id="route1"><span>1</span><div><b>告诉鲸台</b><small>选文件夹，说需求</small></div></div><div class="route-line"></div><div class="route-step" id="route2"><span>2</span><div><b>一起看计划</b><small>先预览，再行动</small></div></div><div class="route-line"></div><div class="route-step" id="route3"><span>3</span><div><b>收下成果</b><small>检查后回传</small></div></div></div>
+        <section class="composer" aria-label="创建任务"><label for="task">今天，想让电脑替你做点什么？</label><textarea id="task" placeholder="比如：读取我添加的文件，告诉我主要内容和需要处理的问题。" rows="4" maxlength="12000"></textarea><div class="local-context"><div class="context-heading"><strong>本地资料 <span id="attachmentCount">0 个文件</span></strong><button id="addFiles" class="text-button"><svg aria-hidden="true"><use href="#i-plus"/></svg>添加本地文件</button></div><div id="attachmentList" aria-live="polite"><p class="help">添加 DOCX、Excel、文字 PDF 或文本文件后，可在这里预览识别内容。</p></div><label class="directory-consent"><input type="checkbox" id="includeDirectory" checked>准备任务时附上当前文件夹的文件名清单</label></div><div class="composer-bottom"><button class="workspace-chip" id="chooseWorkspace"><svg><use href="#i-folder"/></svg><span id="workspaceLabel">选择工作文件夹</span></button><button class="primary" id="prepare">预览并准备<svg><use href="#i-arrow"/></svg></button></div><p class="help">先在本地解析；确认后才把文件清单和选中文件的文字填入 DeepSeek。</p><button class="text-button" id="copyTask">使用常用浏览器：预览并复制完整任务</button></section>
+        <div class="section-heading"><h2>从一件小事开始</h2><span>点一下，填入任务</span></div>
+        <div class="starters"><button data-task="先查看工作区文件，然后按扩展名建立分类文件夹并移动文件，最后生成一份新的文件清单.md。不要删除或覆盖任何文件。"><svg><use href="#i-folder"/></svg><strong>让文件各归其位</strong><span>整理文件夹，顺手留一份清单</span></button><button data-task="先查看工作区，使用 read_file 逐个读取其中支持的文档和文本文件，为我生成一份新的内容摘要.md，注明每段内容的来源文件。"><svg><use href="#i-file"/></svg><strong>把零散资料串起来</strong><span>读取文本，汇总重点和来源</span></button><button data-task="先查看工作区，生成一份新的项目导览.md，说明现有目录结构、关键文件和建议的下一步。不要运行命令或修改原文件。"><svg><use href="#i-spark"/></svg><strong>认识一个新项目</strong><span>梳理结构，找出下一步</span></button></div>
+        <section class="panel action-panel"><div class="section-heading"><h2>行动路线 <span id="planBadge" class="badge">等待计划</span></h2><button id="pastePlan" class="text-button">粘贴计划</button></div><div id="planArea" class="empty-state"><div class="route-empty"><svg><use href="#i-spark"/></svg></div><p>好计划，是完成任务的第一步。</p><small>DeepSeek 回复后，点击右侧「读取行动计划」。</small></div><div id="planActions" class="panel-actions hidden"><button id="saveRecipe" class="quiet">存为技能</button><button id="approve" class="primary">预览并执行</button></div></section>
+        <section class="panel receipt-panel hidden" id="receiptPanel"><div class="section-heading"><h2>执行回执</h2><div><button class="text-button" id="copyReceipt">检查并复制</button><button class="text-button" id="sendReceipt">检查并回传</button></div></div><pre id="receipt"></pre><p class="help">回执可能包含文件内容。你检查确认后，才会填入 DeepSeek。</p></section>
+        <section class="files-section"><div class="section-heading"><h2>工作文件夹</h2><div><button class="text-button" id="undo"><svg><use href="#i-undo"/></svg>撤销最近一步</button><button class="icon-button" id="refreshFiles" aria-label="刷新文件列表"><svg><use href="#i-refresh"/></svg></button></div></div><div class="directory-location"><button class="text-button" id="upDirectory" disabled>上一级</button><span id="directoryLabel">尚未选择文件夹</span></div><div id="files" class="file-list"><p class="help">选择文件夹后显示真实文件。点击文件夹进入，点击文件读取并添加到任务。</p></div></section>
+      </section>
+      <section id="recipesPage" class="hidden subpage"><h1>把好方法，留下来。</h1><p>技能保存任务描述，下次一键填入；每次仍会生成新计划。</p><button class="primary" id="addRecipe">创建技能</button><div id="recipeList" class="recipe-list"></div></section>
+      <section id="historyPage" class="hidden subpage"><h1>每一步，都有来处。</h1><p>只记录操作类型、相对路径与结果，不保存读取的文件正文。</p><div id="historyList" class="history-list"></div></section>
+      <section id="settingsPage" class="hidden subpage"><h1>连接，简单一点。</h1><p>网页登录和本地操作分开运行，网页不能直接调用你的电脑。</p><div class="settings-item"><div><h2>DeepSeek 网页</h2><p>内置官方网页，不需要 API Key。首次使用请登录。</p></div><button id="loginSettings" class="primary">打开登录</button></div><div class="settings-item"><div><h2>使用常用浏览器</h2><p>若内置网页停在人机验证页，可复制任务说明，在常用浏览器中对话，再粘贴计划回来。</p></div><button id="openBrowser" class="quiet">打开浏览器</button></div><div class="settings-item"><div><h2>网页登录状态</h2><p>保存在本机应用数据中，鲸台不读取或导出你的 Cookie。</p></div><button id="clearLogin" class="quiet">清除登录</button></div><div class="settings-item"><div><h2>文件操作范围</h2><p id="settingsRoot">尚未选择工作文件夹。</p></div><button id="chooseSettings" class="quiet">选择文件夹</button></div><div class="capabilities"><h2>这一版已经能做</h2><p>查看目录、读取 Word / Excel / 文字 PDF 和文本、新建文本、创建目录、移动文件、撤销本次会话的文件操作、单独确认的 PowerShell 命令、技能保存和行动记录。</p><h2>还在路线图上</h2><p>Word / Excel 原生编辑、桌面点击与视觉识别、定时任务、多模型切换、跨会话撤销。这些能力尚未接入。</p></div></section>
+    </main>
+    <aside class="deepseek-panel"><div class="connection-head"><div class="connection-mark"><svg><use href="#i-whale"/></svg></div><div><h2>DeepSeek 网页</h2><span id="connectionStatus">登录后，开始协作</span></div><button class="icon-button" id="reloadWeb" aria-label="刷新 DeepSeek 网页"><svg><use href="#i-refresh"/></svg></button></div><div class="web-toolbar"><span>chat.deepseek.com</span><button class="text-button" id="toggleWeb">打开网页</button></div><div id="webSlot" class="web-slot"><div class="connection-empty"><div class="orbit"><svg><use href="#i-whale"/></svg><span></span><span></span></div><h2>熟悉的 DeepSeek，<br>多了一双能行动的手。</h2><p>用你的网页账号登录，<br>在这里和本地文件一起工作。</p><button class="primary" id="login">打开 DeepSeek 网页</button><small>不需要 API Key · 不读取登录凭据</small></div></div><div class="web-footer"><div class="web-hint"><svg><use href="#i-shield"/></svg><span>网页负责思考，行动由你确认。</span></div><button class="read-button" id="readPlan">读取行动计划<svg><use href="#i-arrow"/></svg></button><p>网页适配失败时，可复制回复并「粘贴计划」。</p></div></aside>
+  </div>
+  <footer class="statusbar"><span id="status">准备好了。从选择一个文件夹开始。</span><span>Ctrl + Enter 准备任务</span></footer>
+</div>
+<div id="toast" role="status" aria-live="polite" class="toast hidden"></div>
+<dialog id="modal"><div class="modal-head"><h2 id="modalTitle"></h2><button class="icon-button" id="closeModal" aria-label="关闭对话框">×</button></div><div id="modalBody"></div><div class="modal-actions"><button class="quiet" id="modalCancel">取消</button><button class="primary" id="modalConfirm">确认</button></div></dialog>
+<script src="renderer.js"></script>
+<script src="chat.js"></script>
+<script src="support.js"></script>
+</body></html>

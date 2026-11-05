@@ -1,0 +1,4 @@
+const supportNav=document.createElement('button');supportNav.className='nav';supportNav.textContent='赞赏支持';supportNav.id='supportNav';document.querySelector('.sidebar nav').append(supportNav);
+const supportPage=document.createElement('section');supportPage.id='supportPage';supportPage.className='hidden';supportPage.innerHTML='<iframe title="赞赏支持" src="support.html" style="width:100%;height:100%;min-height:850px;border:0"></iframe>';document.querySelector('main').append(supportPage);
+supportNav.addEventListener('click',()=>{document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));supportPage.classList.remove('hidden');document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b===supportNav));document.getElementById('pageTitle').textContent='赞赏支持';});
+document.querySelectorAll('[data-nav],#newTask').forEach(b=>b.addEventListener('click',()=>supportPage.classList.add('hidden')));

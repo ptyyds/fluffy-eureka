@@ -1,0 +1,26 @@
+WhaleDesk Source-Available License 1.0
+Copyright (c) 2026 WhaleDesk contributors
+
+Permission is granted to use, study, copy, modify, and redistribute the original
+WhaleDesk code, including commercially, subject to all conditions below.
+
+1. Preserve this license and copyright notices in source and binary distributions.
+2. Every distributed version or derivative must retain a visible, functional
+   donation/support entry in the main navigation and its support page. It must
+   remain available without payment, account creation, or extra extensions.
+3. Preserve assets/support-alipay.jpg and assets/support-wechat.jpg unchanged,
+   display both on the support page at a readable size, and preserve their
+   original payment destinations. Do not remove, hide, disable, obscure, replace,
+   or redirect the entry, page, codes, or destinations. Donations remain optional
+   and must not be represented as mandatory payment or a purchase guarantee.
+4. Identify modified distributions as modified and do not imply official endorsement.
+5. Third-party components remain governed by their respective licenses. This
+   license grants no rights beyond those held by the copyright holders.
+
+THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+ARISING FROM THE SOFTWARE OR ITS USE.
+
+This is a custom source-available license, not the MIT license or an OSI-approved
+open-source license. The additional donation-preservation restriction is deliberate.
